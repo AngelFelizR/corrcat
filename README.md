@@ -15,11 +15,11 @@ The development version from GitHub:
 pak::pak("AngelFelizR/rcompanionTidy")
 ```
 
-## Sintax
+## Syntax
 
 To use the functions of this library you need to input a `data.frame` and each function will work to translate the metric into a other `data.frame`.
 
-### Correlation betoween nominal variables
+### Correlation between nominal variables
 
 Validating correlations is an important step for every EDA, if all the columns are numeric is really easy to use the pearson correlation to make our estimation, there are also alternatives for categorical variables that can simplify a lot our analysis.
 
@@ -48,7 +48,7 @@ head(df)
 
 ```
 
-**Cramer correlation for each pear of columns**
+**Cramer correlation for each pair of columns**
 
 ```{r}
 cramerV_df(df)
@@ -63,7 +63,7 @@ cramerV_df(df)
 ```
 
 
-**cohenW correlation for each pear of columns**
+**cohenW correlation for each pair of columns**
 
 ```{r}
 cohenW_df(df)
