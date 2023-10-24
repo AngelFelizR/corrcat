@@ -1,0 +1,22 @@
+Package: rcompanionTidy
+Title: Tidy interface to 'rcompanion'
+Version: 0.0.0.9000
+Authors@R: 
+    person("Angel", "Feliz", email = "angel.esteban.feliz@gmail.com", role = c("aut", "cre"))
+Description: rcompanionTidy is an interface to 'rcompanion' functions with a tidyverse-like syntax, using 'data.table' as back-end.
+Depends: R (>= 4.1.0)
+License: GPL (>= 3)
+Encoding: UTF-8
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.2.3
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat (>= 3.0.0)
+VignetteBuilder: knitr
+Imports: 
+    data.table (>= 1.14.8),
+    rcompanion (>= 2.4.34),
+    tibble (>= 3.2.1),
+    utils (>= 4.2.3)
+Config/testthat/edition: 3
