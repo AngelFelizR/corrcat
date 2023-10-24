@@ -84,7 +84,7 @@ calculate_cat_corr <- function(df,
           ...)
         )
 
-        setattr(temp_list, "names", fun_col_names)
+        data.table::setattr(temp_list, "names", fun_col_names)
 
         temp_list
       }
