@@ -106,26 +106,26 @@ calculate_cat_corr <- function(df,
 
 
 #' @title Cramer's V (phi) for data.frames
-#' @description Calculates Cramer's V for each pear of categorical columns
-#' in a data.frame, estimating confident intervals by bootstrap.
+#' @description Calculates Cramer's V for each pair of categorical columns
+#' in a data.frame, estimating confidence intervals by bootstrap.
 #'
 #' @author Angel Feliz
 #'
 #' @importFrom rcompanion cramerV
 #'
-#' @param df A data.table or data.frame with factor or character columns.
+#' @param df A data.table, tibble or data.frame with factor or character columns.
 #' @param unique As the metric is symmetric (\code{cramerV(x,y) == cramerV(y,x)}) it avoids calculating twice the same value.
 #' @param ci If TRUE, returns confidence intervals by bootstrap. May be slow.
 #' @param ... Additional arguments passed to \code{\link[rcompanion]{cramerV}}.
 #'
-#' @return A data.frame with the columns \code{V1}, \code{V2} and \code{Cramer.V}
+#' @return A data.table, tibble or data.frame with the columns \code{V1}, \code{V2} and \code{Cramer.V}
 #' with a row for each combination of categorical variables present
 #' in the original \code{df}.
 #'
 #' If \code{ci = TRUE} then \code{lower.ci} and \code{upper.ci} will be adding
 #' based on the default \code{R} replications.
 #'
-#' @seealso \code{\link[rcompanion]{cramerV}} \code{\link[rcompanionTidy]{cohenW_df}}
+#' @seealso \code{\link[rcompanion]{cramerV}} \code{\link[corrcat]{cohenW_df}}
 #'
 #' @export
 #'
@@ -133,7 +133,7 @@ calculate_cat_corr <- function(df,
 #' set.seed(2024)
 #' df <- data.frame(
 #'   gender = sample(c("male", "female"), 100, replace = TRUE) |> factor(),
-#'   race = sample(c("white", "blackr", "asian", "other"), 100, replace = TRUE),
+#'   race = sample(c("white", "black", "asian", "other"), 100, replace = TRUE),
 #'   education = sample(c("high school", "college", "graduate"), 100, replace = TRUE),
 #'   income = sample(c("low", "medium", "high"), 100, replace = TRUE)
 #' )
@@ -158,26 +158,26 @@ cramerV_df <- function(df,
 
 
 #' @title Cohen's w for data.frames
-#' @description Calculates Cohen's w for each pear of categorical columns
-#' in a data.frame, estimating confident intervals by bootstrap.
+#' @description Calculates Cohen's w for each pair of categorical columns
+#' in a data.frame, estimating confidence intervals by bootstrap.
 #'
 #' @author Angel Feliz
 #'
 #' @importFrom rcompanion cohenW
 #'
-#' @param df A data.table or data.frame with factor or character columns.
+#' @param df A data.table, tibble or data.frame with factor or character columns.
 #' @param unique As the metric is symmetric (\code{cohenW(x,y) == cohenW(y,x)}) it avoids calculating twice the same value.
 #' @param ci If TRUE, returns confidence intervals by bootstrap. May be slow.
 #' @param ... Additional arguments passed to \code{\link[rcompanion]{cohenW}}.
 #'
-#' @return A data.frame with the columns \code{V1}, \code{V2} and \code{Cohen.w}
+#' @return A data.table, tibble or data.frame with the columns \code{V1}, \code{V2} and \code{Cohen.w}
 #' with a row for each combination of categorical variables present
 #' in the original \code{df}.
 #'
 #' If \code{ci = TRUE} then \code{lower.ci} and \code{upper.ci} will be adding
 #' based on the default \code{R} replications.
 #'
-#' @seealso \code{\link[rcompanion]{cohenW}} \code{\link[rcompanionTidy]{cramerV_df}}
+#' @seealso \code{\link[rcompanion]{cohenW}} \code{\link[corrcat]{cramerV_df}}
 #'
 #' @export
 #'
@@ -185,7 +185,7 @@ cramerV_df <- function(df,
 #' set.seed(2024)
 #' df <- data.frame(
 #'   gender = sample(c("male", "female"), 100, replace = TRUE) |> factor(),
-#'   race = sample(c("white", "blackr", "asian", "other"), 100, replace = TRUE),
+#'   race = sample(c("white", "black", "asian", "other"), 100, replace = TRUE),
 #'   education = sample(c("high school", "college", "graduate"), 100, replace = TRUE),
 #'   income = sample(c("low", "medium", "high"), 100, replace = TRUE)
 #' )

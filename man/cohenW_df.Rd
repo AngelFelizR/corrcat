@@ -7,7 +7,7 @@
 cohenW_df(df, unique = TRUE, ci = FALSE, ...)
 }
 \arguments{
-\item{df}{A data.table or data.frame with factor or character columns.}
+\item{df}{A data.table, tibble or data.frame with factor or character columns.}
 
 \item{unique}{As the metric is symmetric (\code{cohenW(x,y) == cohenW(y,x)}) it avoids calculating twice the same value.}
 
@@ -16,7 +16,7 @@ cohenW_df(df, unique = TRUE, ci = FALSE, ...)
 \item{...}{Additional arguments passed to \code{\link[rcompanion]{cohenW}}.}
 }
 \value{
-A data.frame with the columns \code{V1}, \code{V2} and \code{Cohen.w}
+A data.table, tibble or data.frame with the columns \code{V1}, \code{V2} and \code{Cohen.w}
 with a row for each combination of categorical variables present
 in the original \code{df}.
 
@@ -24,14 +24,14 @@ If \code{ci = TRUE} then \code{lower.ci} and \code{upper.ci} will be adding
 based on the default \code{R} replications.
 }
 \description{
-Calculates Cohen's w for each pear of categorical columns
-in a data.frame, estimating confident intervals by bootstrap.
+Calculates Cohen's w for each pair of categorical columns
+in a data.frame, estimating confidence intervals by bootstrap.
 }
 \examples{
 set.seed(2024)
 df <- data.frame(
   gender = sample(c("male", "female"), 100, replace = TRUE) |> factor(),
-  race = sample(c("white", "blackr", "asian", "other"), 100, replace = TRUE),
+  race = sample(c("white", "black", "asian", "other"), 100, replace = TRUE),
   education = sample(c("high school", "college", "graduate"), 100, replace = TRUE),
   income = sample(c("low", "medium", "high"), 100, replace = TRUE)
 )
@@ -41,7 +41,7 @@ cohenW_df(df)
 cohenW_df(df, ci = TRUE, R = 50)
 }
 \seealso{
-\code{\link[rcompanion]{cohenW}} \code{\link[rcompanionTidy]{cramerV_df}}
+\code{\link[rcompanion]{cohenW}} \code{\link[corrcat]{cramerV_df}}
 }
 \author{
 Angel Feliz

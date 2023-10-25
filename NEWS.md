@@ -1,4 +1,4 @@
-# rcompanionTidy 0.0.0.9000 (in development)
+# corrcat 0.0.0.9000 (in development)
 
 #### New functions
 

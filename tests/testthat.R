@@ -7,6 +7,6 @@
 # * https://testthat.r-lib.org/reference/test_package.html#special-files
 
 library(testthat)
-library(rcompanionTidy)
+library(corrcat)
 
-test_check("rcompanionTidy")
+test_check("corrcat")

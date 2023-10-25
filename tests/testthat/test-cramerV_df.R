@@ -5,7 +5,7 @@ test_that("Validating cramerV_df results",{
   set.seed(2024)
   df <- data.frame(
     gender = sample(c("male", "female"), 100, replace = TRUE) |> factor(),
-    race = sample(c("white", "blackr", "asian", "other"), 100, replace = TRUE),
+    race = sample(c("white", "black", "asian", "other"), 100, replace = TRUE),
     education = sample(c("high school", "college", "graduate"), 100, replace = TRUE),
     income = sample(c("low", "medium", "high"), 100, replace = TRUE)
   )

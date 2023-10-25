@@ -1,10 +1,10 @@
-# rcompanionTidy
+# corrcat
 
 <!-- badges: start -->
-[![R-CMD-check](https://github.com/AngelFelizR/rcompanionTidy/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AngelFelizR/rcompanionTidy/actions/workflows/R-CMD-check.yaml)
+[![R-CMD-check](https://github.com/AngelFelizR/corrcat/actions/workflows/R-CMD-check.yaml/badge.svg)](https://github.com/AngelFelizR/corrcat/actions/workflows/R-CMD-check.yaml)
 <!-- badges: end -->
 
-`rcompanionTidy` is an interface to `rcompanion` functions with a tidyverse-like syntax, using 'data.table' as back-end.
+`corrcat` facilitates to explore correlations between categorical and ordinal variables in a tidy way using `data.table` as back-end.
 
 ## Installation
 
@@ -12,12 +12,12 @@
 The development version from GitHub:
 
 # install.packages("pak")
-pak::pak("AngelFelizR/rcompanionTidy")
+pak::pak("AngelFelizR/corrcat")
 ```
 
 ## Syntax
 
-To use the functions of this library you need to input a `data.frame` and each function will work to translate the metric into a other `data.frame`.
+To use the functions of this library you need to input a `data.table`, `tibble` or `data.frame`, then the functions will work to calculate all possible values of the metric returning as a result other data frame with all the metrics.
 
 ### Correlation between nominal variables
 
@@ -30,7 +30,7 @@ set.seed(2024)
 
 df <- data.frame(
   gender = sample(c("male", "female"), 100, replace = TRUE) |> factor(),
-  race = sample(c("white", "blackr", "asian", "other"), 100, replace = TRUE),
+  race = sample(c("white", "black", "asian", "other"), 100, replace = TRUE),
   education = sample(c("high school", "college", "graduate"), 100, replace = TRUE),
   income = sample(c("low", "medium", "high"), 100, replace = TRUE)
 )
@@ -40,7 +40,7 @@ head(df)
 
 #   gender   race   education income
 # 1 female  other high school   high
-# 2   male blackr high school medium
+# 2   male  black high school medium
 # 3   male  white    graduate    low
 # 4 female  other    graduate   high
 # 5   male  white high school   high

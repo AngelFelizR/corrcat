@@ -1,9 +1,9 @@
-Package: rcompanionTidy
+Package: corrcat
 Title: Tidy interface to 'rcompanion'
 Version: 0.0.0.9000
 Authors@R: 
     person("Angel", "Feliz", email = "angel.esteban.feliz@gmail.com", role = c("aut", "cre"))
-Description: rcompanionTidy is an interface to 'rcompanion' functions with a tidyverse-like syntax, using 'data.table' as back-end.
+Description: corrcat facilitates to explore correlations between categorical and ordinal variables.
 Depends: R (>= 4.1.0)
 License: GPL (>= 3)
 Encoding: UTF-8
