@@ -22,7 +22,7 @@ df_to_matrix <- function(DT,
   dt_matrix <-
     DT[, .N, c("V1", "V2")] |>
     data.table::dcast(V1 ~ V2, value.var = "N") |>
-    (\(x) as.data.frame(x[, !c("V1")], row.names = x$V1) )() |>
+    (\(x) as.data.frame(x[, !c("V1")], row.names = as.character(x$V1)) )() |>
     as.matrix()
 
   return(dt_matrix)
